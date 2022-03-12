@@ -36,4 +36,10 @@ class CouponController extends Controller
 
         return redirect()->route('coupon.index');
     }
+    public function publish(Coupon $coupon){
+        $coupon->is_active = 1;
+        $coupon->save();
+
+        return back();
+    }
 }

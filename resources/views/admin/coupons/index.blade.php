@@ -19,6 +19,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
+                            <th>Publish</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -29,6 +30,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
+                            <th>Publish</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -40,6 +42,19 @@
                                 <td>{{$coupon->campaign->title}}</td>
                                 <td>{{$coupon->created_at->diffForHumans()}}</td>
                                 <td>{{$coupon->updated_at->diffForHumans()}}</td>
+                                <td>
+                                    <form method="post" action="{{route('coupon.publish', $coupon->id)}}">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit"
+                                                class="btn btn-primary"
+                                                @if($coupon->is_active === 1 || !$coupon->canWePublish())
+                                                disabled
+                                            @endif
+                                        >Publish
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
