@@ -36,4 +36,10 @@ class ProductController extends Controller
 
         return redirect()->route('product.index');
     }
+    public function publish(Product $product){
+        $product->is_active = 1;
+        $product->save();
+
+        return back();
+    }
 }

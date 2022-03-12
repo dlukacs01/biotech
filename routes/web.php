@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/products', 'ProductController@index')->name('product.index');
     Route::get('/admin/products/create', 'ProductController@create')->name('product.create');
     Route::post('/admin/products', 'ProductController@store')->name('product.store');
+    Route::put('/admin/products/{product}/publish', 'ProductController@publish')->name('product.publish');
 
     Route::get('/admin/posts', 'PostController@index')->name('post.index');
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');

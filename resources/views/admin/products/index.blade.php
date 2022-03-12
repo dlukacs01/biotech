@@ -19,6 +19,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
+                            <th>Publish</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -29,6 +30,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
+                            <th>Publish</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -40,6 +42,19 @@
                                 <td>{{$product->campaign->title}}</td>
                                 <td>{{$product->created_at->diffForHumans()}}</td>
                                 <td>{{$product->updated_at->diffForHumans()}}</td>
+                                <td>
+                                    <form method="post" action="{{route('product.publish', $product->id)}}">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit"
+                                                class="btn btn-primary"
+                                                @if($product->is_active === 1)
+                                                disabled
+                                            @endif
+                                        >Publish
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
