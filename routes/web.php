@@ -28,6 +28,10 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/products/create', 'ProductController@create')->name('product.create');
     Route::post('/admin/products', 'ProductController@store')->name('product.store');
 
+    Route::get('/admin/posts', 'PostController@index')->name('post.index');
+    Route::get('/admin/posts/create', 'PostController@create')->name('post.create');
+    Route::post('/admin/posts', 'PostController@store')->name('post.store');
+
     Route::get('/admin/statuses', 'StatusController@index')->name('status.index');
     Route::post('/admin/statuses', 'StatusController@store')->name('status.store');
 });
