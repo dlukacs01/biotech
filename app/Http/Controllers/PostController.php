@@ -36,4 +36,10 @@ class PostController extends Controller
 
         return redirect()->route('post.index');
     }
+    public function publish(Post $post){
+        $post->is_active = 1;
+        $post->save();
+
+        return back();
+    }
 }

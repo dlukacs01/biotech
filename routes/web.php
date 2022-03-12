@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/posts', 'PostController@index')->name('post.index');
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
+    Route::put('/admin/posts/{post}/publish', 'PostController@publish')->name('post.publish');
 
     Route::get('/admin/coupons', 'CouponController@index')->name('coupon.index');
     Route::get('/admin/coupons/create', 'CouponController@create')->name('coupon.create');
