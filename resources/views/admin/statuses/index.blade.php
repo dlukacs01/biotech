@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-3">
 
-                <form method="post" action="{{route('statuses.store')}}">
+                <form method="post" action="{{route('status.store')}}">
                     @csrf
                     <div class="form-group">
                         <label for="name">Name</label>

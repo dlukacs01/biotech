@@ -20,6 +20,10 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function(){
     Route::get('/admin', 'AdminsController@index')->name('admin.index');
 
-    Route::get('/admin/statuses', 'StatusController@index')->name('statuses.index');
-    Route::post('/admin/statuses', 'StatusController@store')->name('statuses.store');
+    Route::get('/admin/campaigns', 'CampaignController@index')->name('campaign.index');
+    Route::get('/admin/campaigns/create', 'CampaignController@create')->name('campaign.create');
+    Route::post('/admin/campaigns', 'CampaignController@store')->name('campaign.store');
+
+    Route::get('/admin/statuses', 'StatusController@index')->name('status.index');
+    Route::post('/admin/statuses', 'StatusController@store')->name('status.store');
 });

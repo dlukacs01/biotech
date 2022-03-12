@@ -5,6 +5,6 @@
 </a>
 <div class="collapse" id="collapseStatuses" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
     <nav class="sb-sidenav-menu-nested nav">
-        <a class="nav-link" href="{{route('statuses.index')}}">Manage</a>
+        <a class="nav-link" href="{{route('status.index')}}">Manage</a>
     </nav>
 </div>
