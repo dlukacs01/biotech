@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/admin', 'AdminsController@index')->name('admin.index');
+
+Route::middleware('auth')->group(function(){
+    Route::get('/admin', 'AdminsController@index')->name('admin.index');
+
+    Route::get('/admin/statuses', 'StatusController@index')->name('statuses.index');
+    Route::post('/admin/statuses', 'StatusController@store')->name('statuses.store');
+});

@@ -148,7 +148,7 @@ module.exports = function xhrAdapter(config) {
       // The request errored out and we didn't get a response, this will be
       // handled by onerror instead
       // With one exception: request that using file: protocol, most browsers
-      // will return status as 0 even though it's a successful request
+      // will return statuses as 0 even though it's a successful request
       if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
         return;
       }
@@ -946,7 +946,7 @@ module.exports = function mergeConfig(config1, config2) {
 var createError = __webpack_require__(/*! ./createError */ "./node_modules/axios/lib/core/createError.js");
 
 /**
- * Resolve or reject a Promise based on response status.
+ * Resolve or reject a Promise based on response statuses.
  *
  * @param {Function} resolve A function that resolves the promise.
  * @param {Function} reject A function that rejects the promise.
@@ -958,7 +958,7 @@ module.exports = function settle(resolve, reject, response) {
     resolve(response);
   } else {
     reject(createError(
-      'Request failed with status code ' + response.status,
+      'Request failed with statuses code ' + response.status,
       response.config,
       null,
       response.request,
@@ -16247,7 +16247,7 @@ jQuery.ajaxSettings.xhr = function() {
 
 var xhrSuccessStatus = {
 
-		// File protocol always yields status code 0, assume 200
+		// File protocol always yields statuses code 0, assume 200
 		0: 200,
 
 		// Support: IE <=9 only
@@ -16323,7 +16323,7 @@ jQuery.ajaxTransport( function( options ) {
 								} else {
 									complete(
 
-										// File: protocol always yields status 0; see #8605, #14207
+										// File: protocol always yields statuses 0; see #8605, #14207
 										xhr.status,
 										xhr.statusText
 									);
@@ -16679,9 +16679,9 @@ jQuery.fn.load = function( url, params, callback ) {
 				// Otherwise use the full result
 				responseText );
 
-		// If the request succeeds, this function gets "data", "status", "jqXHR"
+		// If the request succeeds, this function gets "data", "statuses", "jqXHR"
 		// but they are ignored because response was set above.
-		// If it fails, this function gets "jqXHR", "status", "error"
+		// If it fails, this function gets "jqXHR", "statuses", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
 				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
