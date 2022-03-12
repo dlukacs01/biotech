@@ -50,6 +50,7 @@
                     <div class="sb-sidenav-menu-heading">Interface</div>
 
                     <x-admin-sidebar-campaigns-links></x-admin-sidebar-campaigns-links>
+                    <x-admin-sidebar-products-links></x-admin-sidebar-products-links>
                     <x-admin-sidebar-statuses-links></x-admin-sidebar-statuses-links>
 
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

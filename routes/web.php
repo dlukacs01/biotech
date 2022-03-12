@@ -24,6 +24,10 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/campaigns/create', 'CampaignController@create')->name('campaign.create');
     Route::post('/admin/campaigns', 'CampaignController@store')->name('campaign.store');
 
+    Route::get('/admin/products', 'ProductController@index')->name('product.index');
+    Route::get('/admin/products/create', 'ProductController@create')->name('product.create');
+    Route::post('/admin/products', 'ProductController@store')->name('product.store');
+
     Route::get('/admin/statuses', 'StatusController@index')->name('status.index');
     Route::post('/admin/statuses', 'StatusController@store')->name('status.store');
 });

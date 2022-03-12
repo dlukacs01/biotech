@@ -18,6 +18,10 @@ class Campaign extends Model
         return $this->belongsTo(Status::class);
     }
 
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
+
     public function getCampaignImageAttribute($value) {
         if (strpos($value, 'https://') !== FALSE || strpos($value, 'http://') !== FALSE) {
             return $value;

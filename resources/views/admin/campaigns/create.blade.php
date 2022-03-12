@@ -1,7 +1,7 @@
 <x-admin-master>
 @section('content')
 
-    <h1>Create</h1>
+    <h1>Create Campaign</h1>
 
     <form method="post" action="{{route('campaign.store')}}" enctype="multipart/form-data">
         @csrf
@@ -15,7 +15,7 @@
                    placeholder="Enter title">
         </div>
         <div class="form-group">
-            <label for="status">Status</label>
+            <label for="status_id">Status</label>
             <select class="form-control" id="status_id" name="status_id">
                 @foreach($statuses as $status)
                 <option value="{{$status->id}}">{{$status->name}}</option>
