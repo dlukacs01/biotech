@@ -19,7 +19,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Publish</th>
+                            <th>Publish (csak hétköznap)</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -30,7 +30,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Publish</th>
+                            <th>Publish (csak hétköznap)</th>
                         </tr>
                         </tfoot>
                         <tbody>

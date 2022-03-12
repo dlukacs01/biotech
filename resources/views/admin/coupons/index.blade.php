@@ -19,7 +19,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Publish</th>
+                            <th>Publish (első 3 - utolsó 3)</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -30,7 +30,7 @@
                             <th>Campaign</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Publish</th>
+                            <th>Publish (első 3 - utolsó 3)</th>
                         </tr>
                         </tfoot>
                         <tbody>
