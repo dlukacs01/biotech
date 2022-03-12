@@ -26,6 +26,10 @@ class Campaign extends Model
         return $this->hasMany(Post::class);
     }
 
+    public function coupons(){
+        return $this->hasMany(Coupon::class);
+    }
+
     public function getCampaignImageAttribute($value) {
         if (strpos($value, 'https://') !== FALSE || strpos($value, 'http://') !== FALSE) {
             return $value;

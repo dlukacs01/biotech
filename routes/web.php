@@ -32,6 +32,10 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
 
+    Route::get('/admin/coupons', 'CouponController@index')->name('coupon.index');
+    Route::get('/admin/coupons/create', 'CouponController@create')->name('coupon.create');
+    Route::post('/admin/coupons', 'CouponController@store')->name('coupon.store');
+
     Route::get('/admin/statuses', 'StatusController@index')->name('status.index');
     Route::post('/admin/statuses', 'StatusController@store')->name('status.store');
 });
