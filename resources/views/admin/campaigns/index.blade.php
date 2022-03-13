@@ -22,6 +22,7 @@
                         <th>End date</th>
                         <th>Created at</th>
                         <th>Updated at</th>
+                        <th>Publish (csak Jóváhagyott)</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -35,6 +36,7 @@
                         <th>End date</th>
                         <th>Created at</th>
                         <th>Updated at</th>
+                        <th>Publish (csak Jóváhagyott)</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -49,6 +51,19 @@
                             <td>{{$campaign->end_date}}</td>
                             <td>{{$campaign->created_at->diffForHumans()}}</td>
                             <td>{{$campaign->updated_at->diffForHumans()}}</td>
+                            <td>
+                                <form method="post" action="{{route('campaign.publish', $campaign->id)}}">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit"
+                                            class="btn btn-primary"
+                                            @if($campaign->is_active === 1 || $campaign->status->name !== "Jóváhagyott")
+                                            disabled
+                                            @endif
+                                    >Publish
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

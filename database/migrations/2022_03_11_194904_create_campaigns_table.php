@@ -22,6 +22,7 @@ class CreateCampaignsTable extends Migration
             $table->text('body');
             $table->date('start_date');
             $table->date('end_date');
+            $table->integer('is_active')->default(0);
             $table->timestamps();
         });
     }

@@ -35,4 +35,10 @@ class CampaignController extends Controller
 
         return redirect()->route('campaign.index');
     }
+    public function publish(Campaign $campaign){
+        $campaign->is_active = 1;
+        $campaign->save();
+
+        return back();
+    }
 }

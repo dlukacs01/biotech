@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/campaigns', 'CampaignController@index')->name('campaign.index');
     Route::get('/admin/campaigns/create', 'CampaignController@create')->name('campaign.create');
     Route::post('/admin/campaigns', 'CampaignController@store')->name('campaign.store');
+    Route::put('/admin/campaigns/{campaign}/publish', 'CampaignController@publish')->name('campaign.publish');
 
     Route::get('/admin/products', 'ProductController@index')->name('product.index');
     Route::get('/admin/products/create', 'ProductController@create')->name('product.create');
