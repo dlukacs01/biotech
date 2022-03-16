@@ -14,14 +14,14 @@
                        aria-describedby=""
                        placeholder="Enter title">
             </div>
-            <div class="form-group">
-                <label for="campaign_id">Campaign</label>
-                <select class="form-control" id="campaign_id" name="campaign_id">
-                    @foreach($campaigns as $campaign)
-                        <option value="{{$campaign->id}}">{{$campaign->title}}</option>
-                    @endforeach
-                </select>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="campaign_id">Campaign</label>--}}
+{{--                <select class="form-control" id="campaign_id" name="campaign_id">--}}
+{{--                    @foreach($campaigns as $campaign)--}}
+{{--                        <option value="{{$campaign->id}}">{{$campaign->title}}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--            </div>--}}
             <div class="form-group">
                 <label for="product_image">Product image</label>
                 <input type="file"

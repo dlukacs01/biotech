@@ -10,8 +10,16 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function campaign(){
-        return $this->belongsTo(Campaign::class);
+//    public function campaign(){
+//        return $this->belongsTo(Campaign::class);
+//    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function campaigns(){
+        return $this->belongsToMany(Campaign::class);
     }
 
     public function getProductImageAttribute($value) {

@@ -40,4 +40,7 @@ class User extends Authenticatable
     public function campaigns(){
         return $this->hasMany(Campaign::class);
     }
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }

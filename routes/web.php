@@ -28,7 +28,11 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/products', 'ProductController@index')->name('product.index');
     Route::get('/admin/products/create', 'ProductController@create')->name('product.create');
     Route::post('/admin/products', 'ProductController@store')->name('product.store');
+    Route::get('/admin/products/{product}/edit', 'ProductController@edit')->name('product.edit');
+    Route::patch('/admin/products/{product}/update', 'ProductController@update')->name('product.update');
     Route::put('/admin/products/{product}/publish', 'ProductController@publish')->name('product.publish');
+    Route::put('/admin/products/{product}/attach', 'ProductController@attach')->name('product.campaign.attach');
+    Route::put('/admin/products/{product}/detach', 'ProductController@detach')->name('product.campaign.detach');
 
     Route::get('/admin/posts', 'PostController@index')->name('post.index');
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');

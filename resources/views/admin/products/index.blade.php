@@ -16,7 +16,8 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Product image</th>
-                            <th>Campaign</th>
+{{--                            <th>Campaign</th>--}}
+                            <th>Szerző</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Publish (bármely nap)</th>
@@ -27,7 +28,8 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Product image</th>
-                            <th>Campaign</th>
+{{--                            <th>Campaign</th>--}}
+                            <th>Szerző</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Publish (bármely nap)</th>
@@ -37,9 +39,10 @@
                         @foreach($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
-                                <td>{{$product->title}}</td>
+                                <td><a href="{{route('product.edit',$product->id)}}">{{$product->title}}</a></td>
                                 <td><img src="{{$product->product_image}}" alt="" width="100px"></td>
-                                <td>{{$product->campaign->title}}</td>
+{{--                                <td>{{$product->campaign->title}}</td>--}}
+                                <td>{{$product->user->name}}</td>
                                 <td>{{$product->created_at->diffForHumans()}}</td>
                                 <td>{{$product->updated_at->diffForHumans()}}</td>
                                 <td>

@@ -18,8 +18,12 @@ class Campaign extends Model
         return $this->belongsTo(Status::class);
     }
 
+//    public function products(){
+//        return $this->hasMany(Product::class);
+//    }
+
     public function products(){
-        return $this->hasMany(Product::class);
+        return $this->belongsToMany(Product::class);
     }
 
     public function posts(){
