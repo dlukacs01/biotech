@@ -26,12 +26,20 @@ class Campaign extends Model
         return $this->belongsToMany(Product::class);
     }
 
+//    public function posts(){
+//        return $this->hasMany(Post::class);
+//    }
+
     public function posts(){
-        return $this->hasMany(Post::class);
+        return $this->belongsToMany(Post::class);
     }
 
+//    public function coupons(){
+//        return $this->hasMany(Coupon::class);
+//    }
+
     public function coupons(){
-        return $this->hasMany(Coupon::class);
+        return $this->belongsToMany(Coupon::class);
     }
 
     public function getCampaignImageAttribute($value) {

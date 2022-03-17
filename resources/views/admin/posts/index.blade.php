@@ -16,7 +16,8 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Post image</th>
-                            <th>Campaign</th>
+{{--                            <th>Campaign</th>--}}
+                            <th>Szerző</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Publish (csak hétköznap)</th>
@@ -27,7 +28,8 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Post image</th>
-                            <th>Campaign</th>
+{{--                            <th>Campaign</th>--}}
+                            <th>Szerző</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Publish (csak hétköznap)</th>
@@ -37,9 +39,10 @@
                         @foreach($posts as $post)
                             <tr>
                                 <td>{{$post->id}}</td>
-                                <td>{{$post->title}}</td>
+                                <td><a href="{{route('post.edit', $post->id)}}">{{$post->title}}</a></td>
                                 <td><img src="{{$post->post_image}}" alt="" width="100px"></td>
-                                <td>{{$post->campaign->title}}</td>
+{{--                                <td>{{$post->campaign->title}}</td>--}}
+                                <td>{{$post->user->name}}</td>
                                 <td>{{$post->created_at->diffForHumans()}}</td>
                                 <td>{{$post->updated_at->diffForHumans()}}</td>
                                 <td>

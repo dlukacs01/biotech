@@ -16,7 +16,8 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Coupon image</th>
-                            <th>Campaign</th>
+{{--                            <th>Campaign</th>--}}
+                            <th>Szerző</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Publish (első 3 - utolsó 3)</th>
@@ -27,7 +28,8 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Coupon image</th>
-                            <th>Campaign</th>
+{{--                            <th>Campaign</th>--}}
+                            <th>Szerző</th>
                             <th>Created at</th>
                             <th>Updated at</th>
                             <th>Publish (első 3 - utolsó 3)</th>
@@ -37,9 +39,10 @@
                         @foreach($coupons as $coupon)
                             <tr>
                                 <td>{{$coupon->id}}</td>
-                                <td>{{$coupon->title}}</td>
+                                <td><a href="{{route('coupon.edit', $coupon->id)}}">{{$coupon->title}}</a></td>
                                 <td><img src="{{$coupon->coupon_image}}" alt="" width="100px"></td>
-                                <td>{{$coupon->campaign->title}}</td>
+{{--                                <td>{{$coupon->campaign->title}}</td>--}}
+                                <td>{{$coupon->user->name}}</td>
                                 <td>{{$coupon->created_at->diffForHumans()}}</td>
                                 <td>{{$coupon->updated_at->diffForHumans()}}</td>
                                 <td>

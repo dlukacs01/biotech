@@ -15,8 +15,8 @@ class ProductController extends Controller
         return view('admin.products.index',['products'=>$products]);
     }
     public function create(){
-        $campaigns = Campaign::all();
-        return view('admin.products.create',['campaigns'=>$campaigns]);
+        // $campaigns = Campaign::all();
+        return view('admin.products.create');
     }
     public function store(){
         $inputs = request()->validate([

@@ -15,7 +15,8 @@ class CreateCouponsTable extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('campaign_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('campaign_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('coupon_image')->nullable();
             $table->text('body');

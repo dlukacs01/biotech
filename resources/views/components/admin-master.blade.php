@@ -50,8 +50,8 @@
                     <div class="sb-sidenav-menu-heading">Interface</div>
 
                     <x-admin-sidebar-campaigns-links></x-admin-sidebar-campaigns-links>
-                    <x-admin-sidebar-posts-links></x-admin-sidebar-posts-links>
                     <x-admin-sidebar-products-links></x-admin-sidebar-products-links>
+                    <x-admin-sidebar-posts-links></x-admin-sidebar-posts-links>
                     <x-admin-sidebar-coupons-links></x-admin-sidebar-coupons-links>
                     <x-admin-sidebar-statuses-links></x-admin-sidebar-statuses-links>
 

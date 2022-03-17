@@ -39,7 +39,7 @@
                         @foreach($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
-                                <td><a href="{{route('product.edit',$product->id)}}">{{$product->title}}</a></td>
+                                <td><a href="{{route('product.edit', $product->id)}}">{{$product->title}}</a></td>
                                 <td><img src="{{$product->product_image}}" alt="" width="100px"></td>
 {{--                                <td>{{$product->campaign->title}}</td>--}}
                                 <td>{{$product->user->name}}</td>

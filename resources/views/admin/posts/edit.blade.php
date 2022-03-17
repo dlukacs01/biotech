@@ -4,9 +4,9 @@
         <div class="row">
             <div class="col-sm-6">
 
-                <h1>Edit Product</h1>
+                <h1>Edit Post</h1>
 
-                <form method="post" action="{{route('product.update', $product->id)}}" enctype="multipart/form-data">
+                <form method="post" action="{{route('post.update', $post->id)}}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -17,7 +17,7 @@
                                id="title"
                                aria-describedby=""
                                placeholder="Enter title"
-                               value="{{$product->title}}">
+                               value="{{$post->title}}">
                     </div>
                     {{--            <div class="form-group">--}}
                     {{--                <label for="campaign_id">Campaign</label>--}}
@@ -28,15 +28,15 @@
                     {{--                </select>--}}
                     {{--            </div>--}}
                     <div class="form-group">
-                        <div><img height="100px" src="{{$product->product_image}}" alt=""></div>
-                        <label for="product_image">Product image</label>
+                        <div><img height="100px" src="{{$post->post_image}}" alt=""></div>
+                        <label for="post_image">Post image</label>
                         <input type="file"
-                               name="product_image"
+                               name="post_image"
                                class="form-control-file"
-                               id="product_image">
+                               id="post_image">
                     </div>
                     <div class="form-group">
-                        <textarea name="body" class="form-control" id="body" cols="30" rows="10">{{$product->body}}</textarea>
+                        <textarea name="body" class="form-control" id="body" cols="30" rows="10">{{$post->body}}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -45,7 +45,6 @@
         </div>
 
         <div class="row">
-
             <div class="col-sm-10">
 
                 <h1>Campaigns</h1>
@@ -85,11 +84,11 @@
                                     <tr>
                                         <td>
                                             <input type="checkbox"
-                                            @foreach($product->campaigns as $product_campaign)
-                                            @if($product_campaign->title == $campaign->title)
-                                            checked
-                                            @endif
-                                            @endforeach
+                                                   @foreach($post->campaigns as $post_campaign)
+                                                   @if($post_campaign->title == $campaign->title)
+                                                   checked
+                                                @endif
+                                                @endforeach
                                             >
                                         </td>
                                         <td>{{$campaign->id}}</td>
@@ -97,38 +96,38 @@
                                         <td>{{$campaign->start_date}}</td>
                                         <td>{{$campaign->end_date}}</td>
                                         <td>
-                                            <form method="post" action="{{route('product.campaign.attach', $product)}}">
+                                            <form method="post" action="{{route('post.campaign.attach', $post)}}">
                                                 @csrf
                                                 @method('PUT')
                                                 <input type="hidden" name="campaign" value="{{$campaign->id}}">
                                                 <button type="submit"
                                                         class="btn btn-primary"
-                                                        @if($product->campaigns->contains($campaign))
+                                                        @if($post->campaigns->contains($campaign))
                                                         disabled
                                                         @endif
 
-                                                        @foreach($product->campaigns as $product_campaign)
-                                                        @if($product_campaign->start_date <= Carbon\Carbon::today()
+                                                        @foreach($post->campaigns as $post_campaign)
+                                                        @if($post_campaign->start_date <= Carbon\Carbon::today()
                                                         &&
-                                                        $product_campaign->end_date >= Carbon\Carbon::today())
+                                                        $post_campaign->end_date >= Carbon\Carbon::today())
                                                         disabled
-                                                        @endif
-                                                        @endforeach
+                                                    @endif
+                                                    @endforeach
 
                                                 >Attach
                                                 </button>
                                             </form>
                                         </td>
                                         <td>
-                                            <form method="post" action="{{route('product.campaign.detach', $product)}}">
+                                            <form method="post" action="{{route('post.campaign.detach', $post)}}">
                                                 @csrf
                                                 @method('PUT')
                                                 <input type="hidden" name="campaign" value="{{$campaign->id}}">
                                                 <button type="submit"
                                                         class="btn btn-danger"
-                                                        @if(!$product->campaigns->contains($campaign))
+                                                        @if(!$post->campaigns->contains($campaign))
                                                         disabled
-                                                        @endif
+                                                    @endif
                                                 >Detach
                                                 </button>
                                             </form>
