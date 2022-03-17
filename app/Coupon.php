@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Coupon extends Model
@@ -52,6 +53,38 @@ class Coupon extends Model
 
         if(in_array($current_day, $allowed_days)) {
             return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function checkOverlap($current_campaign_id) {
+        $today = Carbon::today();
+
+        // van e ehhez a termékhez bekapcsolt kampány
+        if($this->campaigns()) {
+
+            // átmegyünk a termékhez kapcsolt kampányokon
+            foreach($this->campaigns as $coupon_campaign) {
+
+                // ha van a termékhez kapcsolt ÉS aktív kampány
+                if($coupon_campaign->start_date <= $today && $coupon_campaign->end_date >= $today) {
+
+                    // akkor meg kell nézni, hogy melyek a nem elérhető kampányok
+                    $all_campaigns = Campaign::all();
+                    foreach($all_campaigns as $i_campaign) {
+                        if($i_campaign->start_date <= $today && $i_campaign->end_date >= $today) { // nem elérhető kampányok
+                            if($current_campaign_id === $i_campaign->id) {
+                                return true;
+                            }
+                        }
+                    }
+
+                } else {
+                    return false;
+                }
+
+            }
         } else {
             return false;
         }

@@ -106,13 +106,9 @@
                                                         disabled
                                                         @endif
 
-                                                        @foreach($post->campaigns as $post_campaign)
-                                                        @if($post_campaign->start_date <= Carbon\Carbon::today()
-                                                        &&
-                                                        $post_campaign->end_date >= Carbon\Carbon::today())
+                                                        @if($post->checkOverlap($campaign->id))
                                                         disabled
-                                                    @endif
-                                                    @endforeach
+                                                        @endif
 
                                                 >Attach
                                                 </button>
