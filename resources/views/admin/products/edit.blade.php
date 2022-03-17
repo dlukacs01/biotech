@@ -64,8 +64,8 @@
                                     <th>Title</th>
                                     <th>Start date</th>
                                     <th>End date</th>
-                                    <th>Attach ()</th>
-                                    <th>Detach ()</th>
+                                    <th>Attach (ha nincs átfedés)</th>
+                                    <th>Detach</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -75,8 +75,8 @@
                                     <th>Title</th>
                                     <th>Start date</th>
                                     <th>End date</th>
-                                    <th>Attach ()</th>
-                                    <th>Detach ()</th>
+                                    <th>Attach (ha nincs átfedés)</th>
+                                    <th>Detach</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
@@ -105,6 +105,15 @@
                                                         @if($product->campaigns->contains($campaign))
                                                         disabled
                                                         @endif
+
+                                                        @foreach($product->campaigns as $product_campaign)
+                                                        @if($product_campaign->start_date <= Carbon\Carbon::today()
+                                                        &&
+                                                        $product_campaign->end_date >= Carbon\Carbon::today())
+                                                        disabled
+                                                        @endif
+                                                        @endforeach
+
                                                 >Attach
                                                 </button>
                                             </form>
