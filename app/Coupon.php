@@ -29,6 +29,20 @@ class Coupon extends Model
         return asset('storage/' . $value);
     }
 
+//    public function canWePublish($date) {
+//        $last_day = date('t', strtotime($date)); // t - The number of days in the given month
+//
+//        $allowed_days = array("01", "02", "03", $last_day, $last_day - 1, $last_day - 2);
+//
+//        $current_day = date('d', strtotime($date)); // d - The day of the month (from 01 to 31)
+//
+//        if(in_array($current_day, $allowed_days)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
     public function canWePublish() {
         $last_day = date('t'); // t - The number of days in the given month
 

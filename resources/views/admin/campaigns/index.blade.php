@@ -14,7 +14,7 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>User</th>
+                        <th>Szerző</th>
                         <th>Status</th>
                         <th>Title</th>
                         <th>Campaign image</th>
@@ -28,7 +28,7 @@
                     <tfoot>
                     <tr>
                         <th>Id</th>
-                        <th>User</th>
+                        <th>Szerző</th>
                         <th>Status</th>
                         <th>Title</th>
                         <th>Campaign image</th>

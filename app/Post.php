@@ -29,6 +29,10 @@ class Post extends Model
         return asset('storage/' . $value);
     }
 
+//    function isWeekend($date) {
+//        return (date('N', strtotime($date)) >= 6);
+//    }
+
     public function isWeekend() {
         return (date('N') >= 6);
     }

@@ -107,13 +107,9 @@
                                                         disabled
                                                         @endif
 
-                                                        @foreach($product->campaigns as $product_campaign)
-                                                        @if($product_campaign->start_date <= Carbon\Carbon::today()
-                                                        &&
-                                                        $product_campaign->end_date >= Carbon\Carbon::today())
+                                                        @if($product->checkOverlap($campaign->id))
                                                         disabled
                                                         @endif
-                                                        @endforeach
 
                                                 >Attach
                                                 </button>
