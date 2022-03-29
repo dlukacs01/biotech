@@ -4,10 +4,10 @@ képes kampányokat ki és bekapcsolni:<br><br>
 - A kampányoknak van kezdeti és végdátuma.<br>
 - A kampányokhoz tartozhatnak Termékek, Blog posztok és Kuponok.<br><br>
 A fenti entitásokra a következő szabályok vonatkoznak:<br>
-• Egy blog poszt nem publikálódhat hétvégén
-• Egy termék publikálódhat bármelyik nap
-• Egy kupon csak a hónap első 3 és utolsó 3 napján aktiválódhat
-• Nem futhat két kampány egyidőben, ugyanazokra az elemekre
+• Egy blog poszt nem publikálódhat hétvégén<br>
+• Egy termék publikálódhat bármelyik nap<br>
+• Egy kupon csak a hónap első 3 és utolsó 3 napján aktiválódhat<br>
+• Nem futhat két kampány egyidőben, ugyanazokra az elemekre<br>
 • A kampányok futtatásának feltétele, hogy jóváhagyott státuszban legyenek<br><br>
 A feladat megoldásához PHP 7+ használható. PHP package-k használata engedélyezett,
 de nem kötelező.<br>
