@@ -1,3 +1,19 @@
+Backend fejlesztő próbafeladat <br><br>
+A feladat egy kampánymenedzser leprogramozása, amely az alábbi feltételek alapján
+képes kampányokat ki és bekapcsolni:<br><br>
+- A kampányoknak van kezdeti és végdátuma.<br>
+- A kampányokhoz tartozhatnak Termékek, Blog posztok és Kuponok.<br><br>
+A fenti entitásokra a következő szabályok vonatkoznak:<br>
+• Egy blog poszt nem publikálódhat hétvégén
+• Egy termék publikálódhat bármelyik nap
+• Egy kupon csak a hónap első 3 és utolsó 3 napján aktiválódhat
+• Nem futhat két kampány egyidőben, ugyanazokra az elemekre
+• A kampányok futtatásának feltétele, hogy jóváhagyott státuszban legyenek<br><br>
+A feladat megoldásához PHP 7+ használható. PHP package-k használata engedélyezett,
+de nem kötelező.<br>
+A leprogramozott osztályok Unit Test-jeinek megléte plusz pontot jelent, de nem
+kötelező.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
