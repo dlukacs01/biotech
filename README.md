@@ -12,7 +12,8 @@ A fenti entitásokra a következő szabályok vonatkoznak:<br>
 A feladat megoldásához PHP 7+ használható. PHP package-k használata engedélyezett,
 de nem kötelező.<br>
 A leprogramozott osztályok Unit Test-jeinek megléte plusz pontot jelent, de nem
-kötelező.
+kötelező.<br><br>
+Demo URL: https://dlukacs.com/btch/<br><br>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
